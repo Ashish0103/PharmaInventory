@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pharma Predictor </title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="description" content="Gradient Able Bootstrap admin template made using Bootstrap 4. The starter version of Gradient Able is completely free for personal project." />
+      <meta name="keywords" content="free dashboard template, free admin, free bootstrap template, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+      <meta name="author" content="codedthemes">
+      <!-- Favicon icon -->
+      <link rel="icon" href="/static/assets/nm/images/favicon.ico" type="image/x-icon">
+      <!-- Google font-->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+      <!-- Required Fremwork -->
+      <link rel="stylesheet" type="text/css" href="/static/assets/nm/css/bootstrap/css/bootstrap.min.css">
+      <!-- themify-icons line icon -->
+      <link rel="stylesheet" type="text/css" href="/static/assets/nm/icon/themify-icons/themify-icons.css">
+	  <link rel="stylesheet" type="text/css" href="/static/assets/nm/icon/font-awesome/css/font-awesome.min.css">
+      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="/static/assets/nm/icon/icofont/css/icofont.css">
+      <!-- Style.css -->
+      <link rel="stylesheet" type="text/css" href="/static/assets/nm/css/style.css">
+      <link rel="stylesheet" type="text/css" href="/static/assets/nm/css/jquery.mCustomScrollbar.css">
+	  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	<style type="text/css">
+	.table{
+		width:100%; 
+		border-collapse:collapse; 
+	}
+	.table td{ 
+		padding:7px; border:#4e95f4 1px solid;
+	}
+	/* provide some minimal visual accomodation for IE8 and below */
+	.table tr{
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the ODD background rows  */
+	.table tr:nth-child(odd){ 
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the EVEN background rows  */
+	.table tr:nth-child(even){
+		background: #dae5f4;
+	}
+</style>
+	
+	
+  </head>
+
+  <body>
+  <body>
+	 
+       <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+               <div class="navbar-wrapper">
+                   <div class="navbar-logo">
+                       <a class="mobile-menu" id="mobile-collapse" href="#!">
+                           <i class="ti-menu"></i>
+                       </a>
+                       <div class="mobile-search">
+                           <div class="header-search">
+                               <div class="main-search morphsearch-search">
+                                   <div class="input-group">
+                                       <span class="input-group-addon search-close"><i class="ti-close"></i></span>
+                                       <input type="text" class="form-control" placeholder="Enter Keyword">
+                                       <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <a href="index.html">
+                           <img class="img-fluid" src="/static/assets/images/logosd.png" alt="Theme-Logo" />
+                       </a>
+                       <a class="mobile-options">
+                           <i class="ti-more"></i>
+                       </a>
+                   </div>
+
+                   <div class="navbar-container container-fluid">
+                       <ul class="nav-left">
+                           <li>
+                               <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                           </li>
+                          
+                           <li>
+                               <a href="#!" onclick="javascript:toggleFullScreen()">
+                                   <i class="ti-fullscreen"></i>
+                               </a>
+                           </li>
+						  
+						   
+						    <li style="padding-left:100px;">
+                                    <!-- <a href="dashboard"> -->
+                                        <!-- <span class="pcoded-micon"><i class="ti-dashboard"></i></span> -->
+                                        <!-- <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span> -->
+                                        <!-- <span class="pcoded-mcaret"></span> -->
+                                    <!-- </a> -->
+                                </li>
+							<li>
+                                    <!-- <a href="planning"> -->
+                                        <!-- <span class="pcoded-micon"><i class="ti-user"></i><b></b></span> -->
+                                        <!-- <span class="pcoded-mtext" data-i18n="nav.dash.main">Planning</span> -->
+                                        <!-- <span class="pcoded-mcaret"></span> -->
+                                    <!-- </a> -->
+                                </li>
+								 <li>
+                                    <!-- <a href="forecast"> -->
+                                        <!-- <span class="pcoded-micon"><i class="ti-bar-chart"></i><b></b></span> -->
+                                        <!-- <span class="pcoded-mtext" data-i18n="nav.dash.main">Forecast</span> -->
+                                        <!-- <span class="pcoded-mcaret"></span> -->
+                                    </a>
+                                </li>
+                               
+								 <li  class="active" style="font-size:18px;font-weight:bolder;">
+                                    <a href="dataloader">
+                                        <span class="pcoded-micon"><i class="ti-agenda"></i><b></b></span>
+                                        <span class="pcoded-mtext"  style="
+    color: #0f0f10; data-i18n="nav.dash.main">Pharma Predictor</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                       </ul>
+                       <ul class="nav-right">
+                           
+                           
+                           <li class="user-profile header-notification">
+                               <a href="#!">
+                                   
+                                   <i class="ti-angle-down"></i>
+                               </a>
+                               <ul class="show-notification profile-notification">
+                                   <!-- <li> -->
+                                       <!-- <a href="#!"> -->
+                                           <!-- <i class="ti-settings"></i> Settings -->
+                                       <!-- </a> -->
+                                   <!-- </li> -->
+                                   <!-- <li> -->
+                                       <!-- <a href="user-profile.html"> -->
+                                           <!-- <i class="ti-user"></i> Profile -->
+                                       <!-- </a> -->
+                                   <!-- </li> -->
+                                   
+                                   <!-- <li> -->
+                                       <!-- <a href="auth-lock-screen.html"> -->
+                                           <!-- <i class="ti-lock"></i> Lock Screen -->
+                                       <!-- </a> -->
+                                   <!-- </li> -->
+                                   <li>
+                                       <a href="login">
+                                       <i class="ti-layout-sidebar-left"></i> Logout
+                                   </a>
+                                   </li>
+                               </ul>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+           </nav>
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            
+                           
+                            <ul class="pcoded-item pcoded-left-item">
+							
+                                 <ul class="pcoded-item pcoded-left-item">
+							<!-- <li style="padding-top:10px;"> -->
+                                    <!-- <a href="dashboard"> -->
+                                        <!-- <span class="pcoded-micon"><i class="ti-dashboard"></i><b>D</b></span> -->
+                                        <!-- <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span> -->
+                                        <!-- <span class="pcoded-mcaret"></span> -->
+                                    <!-- </a> -->
+                                <!-- </li> -->
+								 <!-- <li > -->
+                                    <!-- <a href="planning"> -->
+                                        <!-- <span class="pcoded-micon"><i class="ti-user"></i><b></b></span> -->
+                                        <!-- <span class="pcoded-mtext" data-i18n="nav.dash.main">Planning</span> -->
+                                        <!-- <span class="pcoded-mcaret"></span> -->
+                                    <!-- </a> -->
+                                <!-- </li> -->
+                                <li style="padding-top:10px;"> 
+                                     <a href="adminhome"> 
+                                         <span class="pcoded-micon"><i class="ti-dashboard"></i><b>D</b></span> 
+                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span> 
+                                         <span class="pcoded-mcaret"></span> 
+                                     </a> 
+                                 </li> 
+								 <li class="active"> 
+                                    <a href="manageuser">
+                                         <span class="pcoded-micon"><i class="ti-bar-chart"></i><b></b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Manage Users</span> 
+                                        <<span class="pcoded-mcaret"></span> 
+                                     </a>
+                                </li>
+                                
+                            </ul>
+                         
+						 </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+
+                                    <div class="page-body">
+									<div>
+									{% block content %}
+									<h1> Registerred Users List</h1>
+                                      <table class="table">
+ 
+                                                                      <tr style="background-color:orange;">
+																	  
+																	  
+                        
+<th>User Id</th>
+<th>Username</th>
+<th>Name</th>
+<th>E-mail</th>
+<th>Phone#</th>
+<th>Address</th>
+<th></th>
+
+ </tr>
+                                                                       
+                                                                       
+{% for item in data %}
+<tr>
+    <td>{{item[0]}}</td>
+    <td>{{item[1]}}</td>
+    <td>{{item[2]}}</td>
+    <td>{{item[4]}}</td>
+    <td>{{item[5]}}</td>
+    <td>{{item[6]}}</td>
+    <td><a href="delete?Email={{item[4]}}">Delete</a></td>
+    
+</tr>
+{% endfor %}
+                                                                    </table>
+										{% endblock content %}	
+									</div>
+</div>
+
+
+
+	</div>
+	
+</div>
+
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warning Section Starts -->
+        <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="/static/assets/nm/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="/static/assets/nm/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="/static/assets/nm/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="/static/assets/nm/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="/static/assets/nm/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->
+<!-- Required Jquery -->
+<script>
+function predictor()
+{
+	window.location="manageuser";
+}
+</script>
+<script type="text/javascript" src="/static/assets/nm/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/static/assets/nm/js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/assets/nm/js/popper.js/popper.min.js"></script>
+<script type="text/javascript" src="/static/assets/nm/js/bootstrap/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="/static/assets/nm/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="/static/assets/nm/js/modernizr/modernizr.js"></script>
+<!-- am chart -->
+<script src="/static/assets/nm/pages/widget/amchart/amcharts.min.js"></script>
+<script src="/static/assets/nm/pages/widget/amchart/serial.min.js"></script>
+<!-- Chart js -->
+<script type="text/javascript" src="/static/assets/nm/js/chart.js/Chart.js"></script>
+<!-- Todo js -->
+<script type="text/javascript " src="/static/assets/nm/pages/todo/todo.js "></script>
+<!-- Custom js -->
+<script type="text/javascript" src="/static/assets/nm/pages/dashboard/custom-dashboard.min.js"></script>
+<script type="text/javascript" src="/static/assets/nm/js/script.js"></script>
+<script type="text/javascript " src="/static/assets/nm/js/SmoothScroll.js"></script>
+<script src="/static/assets/nm/js/pcoded.min.js"></script>
+<script src="/static/assets/nm/js/vartical-demo.js"></script>
+<script src="/static/assets/nm/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+<script src="{{ url_for('static', filename='js/plots.js') }}">
+
+</script>
+
+
+	
+	
+
+</body>
+
+</html>
